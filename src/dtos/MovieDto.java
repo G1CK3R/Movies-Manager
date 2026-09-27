@@ -104,7 +104,16 @@ public class MovieDto {
         return s;
     }    
 
-    
+    public boolean validade() {
+        if(this.director == "" || this.director == null)
+            return false;
+        else if(this.cast == null || this.cast.length == 0){
+            return false;
+        }else if(this.rating < 0)
+            return false;
+
+        return true;
+    }
     
 
 }

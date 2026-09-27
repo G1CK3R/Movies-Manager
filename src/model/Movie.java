@@ -5,16 +5,22 @@ public class Movie {
     private String name;
     private Director director;
     private HashSet<Actor> cast;
-    private float nota;
+    private float rating;
 
     
     public Movie(String name, Director director,
-        HashSet<Actor> cast, float nota) {
+        HashSet<Actor> cast, float rating) {
         this.name = name;
         this.director = director;
         this.cast = cast;
-        this.nota = nota;
+        this.rating = rating;
     }
+    public Movie(Movie movie) {
+		this.name = movie.getName();
+		this.director = new Director(movie.getDirector());
+		this.cast = movie.getCast();
+		this.rating = movie.getRating();
+	}
 
     public String getName() {
         return name;
@@ -35,10 +41,10 @@ public class Movie {
         this.cast = cast;
     }
     public float getRating() {
-        return nota;
+        return rating;
     }
-    public void setNota(float nota) {
-        this.nota = nota;
+    public void setNota(float rating) {
+        this.rating = rating;
     }
 
     

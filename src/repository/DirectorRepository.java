@@ -21,6 +21,10 @@ public class DirectorRepository {
         return new HashSet<Director>(directors);
     }
 
+    public boolean removeDirector(Director diretor) {
+		return this.directors.remove(diretor);
+	}
+
     public Director getDirector(String name){
         Director director =   null;
 

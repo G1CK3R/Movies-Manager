@@ -20,6 +20,10 @@ public class ActorRepository {
         return this.actors.add(actor);
     }
 
+    public boolean removeActor(Actor actor) {
+		return this.actors.remove(actor);
+	}
+
     public Actor getActor(String name){
         Actor a =  null;
 
