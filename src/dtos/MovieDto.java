@@ -89,8 +89,19 @@ public class MovieDto {
 
     @Override
     public String toString() {
-        return "MovieDto\n name=" + name + ", \ndirector=" + director + ",\ncast=" + Arrays.toString(cast) + ", rating="
-                + rating ;
+        String s = "";
+
+        s += " Name: " + this.name + "\n";
+        s += " Director: " + this.director + "\n";
+        s += " Elenco: \n";
+
+        for(String c : this.cast){
+            s += "  " + c + "\n";
+        }
+
+        s += " Nota:" + this.rating + "\n";
+
+        return s;
     }    
 
     
