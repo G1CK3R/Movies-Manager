@@ -34,7 +34,7 @@ public class Movie {
     public void setCast(HashSet<Actor> cast) {
         this.cast = cast;
     }
-    public float getNota() {
+    public float getRating() {
         return nota;
     }
     public void setNota(float nota) {

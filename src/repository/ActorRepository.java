@@ -8,7 +8,7 @@ public class ActorRepository {
 
     private HashSet<Actor> actors;
 
-    public ActorRepository(HashSet<Actor> actors) {
+    public ActorRepository() {
         this.actors = new HashSet<Actor>();
     }
 

@@ -10,7 +10,7 @@ public class MovieRepository {
         this.movies =  new HashSet<Movie>();
     }
 
-    public boolean addFilme(Movie movie){
+    public boolean addMovie(Movie movie){
         return this.movies.add(movie);
     }
 
