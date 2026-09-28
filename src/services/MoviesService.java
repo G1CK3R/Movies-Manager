@@ -63,28 +63,28 @@ public class MoviesService {
 		return ConvertFilmListToDto(filteredMovies);
 	}
 
-	private List<MovieDto> ConvertFilmListToDto(List<Movie> filmes){
-		List<MovieDto> filmesDto = new ArrayList<MovieDto>();
+	private List<MovieDto> ConvertFilmListToDto(List<Movie> movies){
+		List<MovieDto> moviesDto = new ArrayList<MovieDto>();
 		
-		for(Movie f : filmes) {
-			filmesDto.add(new MovieDto(f));
+		for(Movie f : movies) {
+			moviesDto.add(new MovieDto(f));
 		}
 		
-		return filmesDto;		
+		return moviesDto;		
 	}
 
-	public List<MovieDto> listaFilmesPorDiretor(String diretor){
+	public List<MovieDto> listMoviesByDirector(String director){
 		
 		ArrayList<Movie> filteredMoviess = new ArrayList<Movie>();
 		
-		HashSet<Movie> filmes = this.movieR.getMovies();
+		HashSet<Movie> movies = this.movieR.getMovies();
 		
-		Iterator<Movie> i = filmes.iterator();
+		Iterator<Movie> i = movies.iterator();
 		
 		while(i.hasNext()) {
 			Movie f = i.next();
 			
-			if(f.getDirector().getName().equals(diretor)) {
+			if(f.getDirector().getName().equals(director)) {
 				filteredMoviess.add(new Movie(f));
 			}
 		}
@@ -92,13 +92,13 @@ public class MoviesService {
 		return convertMoviesToDto(filteredMoviess);
 	}
 	
-	public List<MovieDto> listaFilmesPorActor(String Actor){
+	public List<MovieDto> listMoviesByActor(String Actor){
 		
 		ArrayList<Movie> filteredMoviess = new ArrayList<Movie>();
 		
-		HashSet<Movie> filmes = this.movieR.getMovies();
+		HashSet<Movie> movies = this.movieR.getMovies();
 		
-		Iterator<Movie> i = filmes.iterator();
+		Iterator<Movie> i = movies.iterator();
 		
 		while(i.hasNext()) {
 			Movie f = i.next();
@@ -118,42 +118,42 @@ public class MoviesService {
 		return convertMoviesToDto(filteredMoviess);
 	}
 	
-	public List<MovieDto> listaFilmesPorNota(float nota){
+	public List<MovieDto> listMoviesByRating(float rating){
 		ArrayList<Movie> filteredMoviess = new ArrayList<Movie>();
 		
-		HashSet<Movie> filmes = this.movieR.getMovies();
+		HashSet<Movie> movies = this.movieR.getMovies();
 		
-		for(Movie f : filmes) {
-			if(f.getRating() >= nota)
+		for(Movie f : movies) {
+			if(f.getRating() >= rating)
 				filteredMoviess.add(f);
 		}
 		
 		return convertMoviesToDto(filteredMoviess);
 	}
 	
-	private List<MovieDto> convertMoviesToDto(List<Movie> filmes){
-		List<MovieDto> filmesDto = new ArrayList<MovieDto>();
+	private List<MovieDto> convertMoviesToDto(List<Movie> movies){
+		List<MovieDto> moviesDto = new ArrayList<MovieDto>();
 		
-		for(Movie f : filmes) {
-			filmesDto.add(new MovieDto(f));
+		for(Movie f : movies) {
+			moviesDto.add(new MovieDto(f));
 		}
 		
-		return filmesDto;		
+		return moviesDto;		
 	}
 	
-	public boolean addActor(String nome) {
-		return this.actorR.addActor(new Actor(nome));
+	public boolean addActor(String name) {
+		return this.actorR.addActor(new Actor(name));
 	}
 	
-	public boolean removeActor(String nome) {
-		return this.actorR.removeActor(new Actor(nome));
+	public boolean removeActor(String name) {
+		return this.actorR.removeActor(new Actor(name));
 	}
 	
-	public Actor getActor(String nome) {
-		return actorR.getActor(nome);
+	public Actor getActor(String name) {
+		return actorR.getActor(name);
 	}
 	
-	public ArrayList<String> listaActores(){
+	public ArrayList<String> listActors(){
 		HashSet<Actor> ActoresArray = this.actorR.getActors();	
 		
 		ArrayList<String> Actores = new ArrayList<>();
@@ -164,15 +164,15 @@ public class MoviesService {
 		return Actores;
 	}
 	
-	public boolean addDirector(String nome) {
-		return this.directorR.addDirector(new Director(nome));
+	public boolean addDirector(String name) {
+		return this.directorR.addDirector(new Director(name));
 	}
 	
-	public boolean removeDirector(String nome) {
-		return this.directorR.removeDirector(new Director(nome));
+	public boolean removeDirector(String name) {
+		return this.directorR.removeDirector(new Director(name));
 	}
 	
-	public ArrayList<String> listaDiretores(){
+	public ArrayList<String> listDiretors(){
 		
 		HashSet<Director> diretoresArray = this.directorR.getDirectors();
 		

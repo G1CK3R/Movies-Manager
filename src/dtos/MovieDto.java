@@ -1,5 +1,4 @@
 package dtos;
-import java.util.Arrays;
 import java.util.HashSet;
 import model.Actor;
 import model.Movie;
@@ -104,7 +103,7 @@ public class MovieDto {
         return s;
     }    
 
-    public boolean validade() {
+    public boolean validate() {
         if(this.director == "" || this.director == null)
             return false;
         else if(this.cast == null || this.cast.length == 0){
